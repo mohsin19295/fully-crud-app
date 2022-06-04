@@ -2,12 +2,15 @@ import Data from "../db.json";
 import "./crudApp.css";
 import React, { useState, useTransition } from "react";
 import Form from "./form/Form";
+import { AiFillDelete } from "react-icons/ai";
+import { RiEdit2Fill } from "react-icons/ri";
+import axios from "axios"
 
 const CrudApp = () => {
   const [query, setQuery] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [isPending, startTransition] = useTransition();
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -20,9 +23,10 @@ const CrudApp = () => {
     return (
       e.name.toLowerCase().includes(query) ||
       e.email.toLowerCase().includes(query) ||
-      e.role.toLowerCase().includes(query) 
+      e.role.toLowerCase().includes(query)
     );
   });
+
 
   return (
     <>
@@ -42,14 +46,14 @@ const CrudApp = () => {
                 />
               </div>
               <div className="add-cancel-field">
-                <p onClick={()=> setShow(true)}>Add Field</p>
-                <p onClick={()=> setShow(false)}>Cancel</p>
+                <p onClick={() => setShow(true)}>Add Field</p>
+                <p onClick={() => setShow(false)}>Cancel</p>
               </div>
             </div>
           </div>
         </nav>
 
-        {show ? <Form/> : null}
+        {show ? <Form /> : null}
         {isPending && (
           <img
             id="spinner"
@@ -63,6 +67,10 @@ const CrudApp = () => {
               <h2>{e.name}</h2>
               <h6>{e.email}</h6>
               <h4>{e.role}</h4>
+              <div className="operation-icons">
+                <RiEdit2Fill id="edit-icon" />
+                <AiFillDelete id="delete-icon"/>
+              </div>
             </div>
           ))}
         </div>

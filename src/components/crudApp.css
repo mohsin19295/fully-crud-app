@@ -80,6 +80,19 @@ nav{
     box-shadow: 0 0 5px rgba(0,0,0.5);
 }
 
+.grid-card .operation-icons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+ .operation-icons #edit-icon{
+   color: blue;
+}
+ .operation-icons #delete-icon{
+   color: red;
+}
+
 #spinner{
     height:50px;
     width: 50px;
