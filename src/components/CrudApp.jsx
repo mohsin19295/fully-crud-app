@@ -1,11 +1,13 @@
 import Data from "../db.json";
 import "./crudApp.css";
 import React, { useState, useTransition } from "react";
+import Form from "./form/Form";
 
 const CrudApp = () => {
   const [query, setQuery] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [isPending, startTransition] = useTransition();
+  const [show, setShow] = useState(false)
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -40,13 +42,14 @@ const CrudApp = () => {
                 />
               </div>
               <div className="add-cancel-field">
-                <p>Add Field</p>
-                <p>Cancel</p>
+                <p onClick={()=> setShow(true)}>Add Field</p>
+                <p onClick={()=> setShow(false)}>Cancel</p>
               </div>
             </div>
           </div>
         </nav>
 
+        {show ? <Form/> : null}
         {isPending && (
           <img
             id="spinner"
