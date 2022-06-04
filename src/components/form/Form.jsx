@@ -9,16 +9,23 @@ const Form = (props) => {
      <form onSubmit={props.handleSubmit}>
       <input
         type="text"
-        placeholder="...title"
-        name="title"
-        value={props.title}
+        placeholder="...Name"
+        name="name"
+        value={props.name}
         onChange={props.handleChange}
       />
       <input
         type="text"
-        placeholder="...body"
-        name="body"
-        value={props.body}
+        placeholder="...Email"
+        name="email"
+        value={props.email}
+        onChange={props.handleChange}
+      />
+      <input
+        type="text"
+        placeholder="...Role"
+        name="role"
+        value={props.role}
         onChange={props.handleChange}
       />
       <input type="submit" />
