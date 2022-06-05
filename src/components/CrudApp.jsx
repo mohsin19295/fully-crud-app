@@ -96,11 +96,11 @@ const CrudApp = () => {
         {/* Nav section */}
         <nav>
           <ul className="left-nav">
-            <li className="nav_items">
-              <img
-                src="https://mohsinportfolio1.netlify.app/images/mohsin.png"
-                alt=""
-              />
+            <li>
+            <img
+                  src="https://mohsinportfolio1.netlify.app/images/mohsin.png"
+                  alt=""
+                />
             </li>
           </ul>
 
@@ -113,10 +113,10 @@ const CrudApp = () => {
                 onChange={handleSearch}
               />
             </li>
-            <li className="nav_items" id="add-field">
+            <li id="add-field">
               <button onClick={() => setShowForm(true)}>Add</button>
             </li>
-            <li className="nav_items">
+            <li>
               <button onClick={() => setShowForm(false)}>Cancel</button>
             </li>
           </ul>

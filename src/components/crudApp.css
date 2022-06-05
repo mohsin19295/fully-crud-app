@@ -74,26 +74,30 @@ nav ul {
 .left-nav{
     max-width: 70px;
     margin-left: 50px;
+    padding-top: 4px;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.left-nav img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px rgba(0,0,0.5);
+    width: 100%;
 }
 
 .right-nav{
     padding: 20px 50px 20px 0;
     display: flex;
     align-items: center;
-}
-
-.nav_items img {
-    width: 100%;
-    border-radius: 50%;
+    justify-content: center;
 }
 
 .right-nav .input-field {
     max-width: 200px;
 }
 
-.right-nav li button,
+.right-nav button,
 input {
     height: 30px;
     width: 100%;
@@ -131,7 +135,7 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0.5);
     height: calc(100% + 20px)
