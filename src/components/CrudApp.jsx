@@ -62,8 +62,14 @@ const CrudApp = () => {
   const filterData = state.filter((e) => {
     return (
       e.name.toLowerCase().includes(query) ||
+      e.name.toUpperCase().includes(query) ||
+      e.name.includes(query) ||
       e.email.toLowerCase().includes(query) ||
-      e.role.toLowerCase().includes(query)
+      e.email.toUpperCase().includes(query) ||
+      e.email.includes(query) ||
+      e.role.toLowerCase().includes(query) ||
+      e.role.toUpperCase().includes(query) ||
+      e.role.includes(query)
     );
   });
 
