@@ -1,5 +1,6 @@
 import Data from "../db.json";
 import "./crudApp.css";
+import "./crudMedia.css";
 import React, { useState, useTransition } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { RiEdit2Fill } from "react-icons/ri";
@@ -44,6 +45,7 @@ const CrudApp = () => {
         role: postInput.role,
         id: uuid(),
       };
+      setPostInput({ name: "", email: "", role: ""})
       setState([...state, payload]);
       setShowForm(false);
     } else {
@@ -83,48 +85,26 @@ const CrudApp = () => {
       <main>
         {/* Nav section */}
         <nav>
-          {/* <div className="left-nav">
-            <h1>Crud Operation App</h1>
-          </div>
-          <div className="right-nav">
-            <div className="box">
-              <div className="input-field">
-                <input
-                  type="text"
-                  placeholder="...Search"
-                  value={searchValue}
-                  onChange={handleSearch}
-                />
-              </div>
-              <div className="add-cancel-field">
-                <p onClick={() => setShowForm(true)}>Add Field</p>
-                <p onClick={() => setShowForm(false)}>Cancel</p>
-              </div>
-            </div>
-          </div> */}
-             
-          <ul>
+          <ul className="left-nav">
           <li className="nav_items">
-              <div className="nav_links"><img src="https://mohsinportfolio1.netlify.app/images/mohsin.png" alt="" /></div>
+              <img src="https://mohsinportfolio1.netlify.app/images/mohsin.png" alt="" />
             </li>
           </ul>
 
           <ul className="right-nav">
-            <li className="nav_items">
-           <div  className="input-field">
+            <li className="nav_items input-field">
            <input
                   type="text"
                   placeholder="...Search"
                   value={searchValue}
                   onChange={handleSearch}
                 />
-           </div>
+            </li>
+            <li className="nav_items" id="add-field">
+              <button onClick={() => setShowForm(true)}>Add</button>
             </li>
             <li className="nav_items">
-              <div className="nav_links" id="add-field"><button onClick={() => setShowForm(true)}>Add</button></div>
-            </li>
-            <li className="nav_items">
-              <div className="nav_links" ><button onClick={() => setShowForm(false)}>Cancel</button></div>
+              <button onClick={() => setShowForm(false)}>Cancel</button>
             </li>
           </ul>
 
@@ -133,7 +113,7 @@ const CrudApp = () => {
         {/* Form Section */}
         {showForm ? (
           <div className="form-div">
-            <h1>CRUD Operation</h1>
+            <p>CRUD Operation</p>
             <div className="form-group">
               <form onSubmit={formSubmit}>
                 <input
@@ -171,6 +151,7 @@ const CrudApp = () => {
             alt="Spinner"
           />
         )}
+
         {/* Grid Section */}
         <div className="grid-box">
           {filterData.map((e) => (

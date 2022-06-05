@@ -1,0 +1,195 @@
+@media screen and (max-width: 900px) {
+    main {
+        gap: 40px;
+    }
+
+    .left-nav{
+        max-width: 60px;
+    }
+
+    .form-div {
+        top: 90px;
+    }
+    
+    .form-div p {
+        font-size:17px;
+    }
+    
+    .form-group {
+        padding: 8px 0;
+    }
+    
+    form {
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    form input {
+        padding: 0 8px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    main {
+        gap: 35px;
+    }
+
+    .left-nav{
+        margin-left: 40px;
+    }
+
+    .right-nav {
+        padding: 20px 40px 20px 0;
+    }
+
+    .grid-box {
+        padding: 0 40px;
+    }
+
+    .left-nav{
+        max-width: 50px;
+    }
+
+    .form-div p {
+        font-size:16px;
+    }
+    
+    .form-group {
+        padding: 7px 0;
+    }
+    
+    form {
+        gap: 7px;
+        padding: 7px;
+    }
+    
+    form input {
+        padding: 0 7px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .left-nav{
+        margin-left: 35px;
+    }
+
+    .right-nav {
+        padding: 15px 35px 15px 0;
+    }
+
+    .grid-box {
+        padding: 0 35px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main {
+        gap: 25px;
+    }
+
+    .left-nav{
+        max-width: 40px;
+        margin-left: 30px;
+    }
+
+    .right-nav {
+        padding: 15px 30px 15px 0;
+    }
+
+    .right-nav li button,
+    input {
+        height: 25px;
+        font-size: 14px;
+        padding: 0 8px;
+    }
+
+    #add-field {
+        margin: 0 10px;
+    }
+
+    .grid-box {
+        padding: 0 30px;
+        gap: 20px;
+    }
+
+    .form-div {
+        top: 80px;
+    }
+
+    .form-div p {
+        font-size:16px;
+    }
+    
+    .form-group {
+        padding: 7px 0;
+    }
+    
+    form {
+        gap: 6px;
+        padding: 6px;
+    }
+    
+    form input {
+        padding: 0 6px;
+        height: 22px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    main {
+        gap: 20px;
+    }
+    .left-nav{
+        max-width: 35px;
+        margin-left: 20px;
+    }
+
+    .right-nav {
+        padding: 10px 20px 10px 0;
+    }
+
+    .right-nav li button,
+    input {
+        height: 22px;
+        font-size: 12px;
+        padding: 0 5px;
+    }
+
+    #add-field {
+        margin: 0 7px;
+    }
+
+    .grid-box {
+        padding: 0 20px;
+        row-gap: 20px;
+    }
+
+    .form-div {
+        top: 70px;
+    }
+
+    .form-div p {
+        font-size:15px;
+    }
+    
+    .form-group {
+        padding: 6px 0;
+    }
+    
+    form {
+        gap: 5px;
+        padding: 5px;
+    }
+    
+    form input {
+        padding: 0 5px;
+        height: 20px;
+        font-size: 13px;
+    }
+}
