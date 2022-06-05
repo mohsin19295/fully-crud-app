@@ -23,6 +23,8 @@ main{
     box-shadow: 0 0 10px rgba(0,0,0.5);
     z-index: 1;
     background: linear-gradient(red, blue);
+    position: sticky;
+    top: 115px;
 }
 
 .form-div h1{
@@ -53,68 +55,86 @@ form input{
 
 /* Navbar */
 nav{
-    height: 10vh;
-    padding: 0 50px;
+    width: 100%;
+    padding: 20px 50px;
     background: linear-gradient(to right, blue, red);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     position: sticky;
     top: 0;
     z-index: 999;
-}
-
-.left-nav h1{
-    color: #fff;
-}
-
-.right-nav .box{
-    display: flex;
     gap: 20px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
 }
 
-.box .input-field input{
-    height:30px;
-    outline: none;
-    padding: 0 10px;
-    border-radius: 5px;
-    border: 0;
-    font-size: 16px;
-}
-
-.box .add-cancel-field{
+nav ul {
     display: flex;
-    gap: 20px;
-    justify-content:center;
     align-items: center;
+    list-style: none;
 }
 
-.add-cancel-field p{
-    padding: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 0 2px rgba(0,0,0.5);
+.nav_links {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
 }
+
+.nav_links img{
+    max-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+.right-nav .input-field{
+    max-width: 200px;
+}
+
+.right-nav li button, input{
+height: 30px;
+width: 100%;
+border-radius: 5px;
+border: 0;
+font-size: 16px;
+padding: 0 10px;
+}
+
+.right-nav input{
+    outline: none;
+}
+
+.right-nav li button{
+cursor: pointer;
+font-weight: bold;
+}
+
+#add-field{
+      margin: 0 20px;
+  }
 
 /* Grid box */
 .grid-box{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     padding: 0 50px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    row-gap: 50px;
 }
 .grid-card{
     background: #000;
     color: #fff;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0.5);
+    height: calc(100% + 20px)
+}
+
+.grid-card p, h3, h4{
+    overflow: hidden;
+    white-space: wrap;
 }
 
 .grid-card .operation-icons{
@@ -134,4 +154,57 @@ nav{
     height:50px;
     width: 50px;
     margin: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .nav_links {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    main{
+        gap: 30px;
+    }
+    nav{
+        padding: 10px 20px;
+    }
+    .nav_items .input-field{
+      max-width: 120px;
+  }
+  .input-field input{
+      width: 100%;
+      height: 25px;
+      padding: 0 5px;
+  }
+  
+  #add-field{
+      margin: 0 10px;
+  }
+  .nav_links{
+      font-size:15px;
+  }
+  .grid-box{
+      padding: 0 20px;
+      row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+    .nav_links {
+        font-size: 13px;
+    }
+
+    #add-field{
+        margin: 0 7px;
+    }
+    .input-field input{
+        height: 20px;
+    }
+    nav{
+        padding: 5px 10px;
+    }
+    .grid-box{
+        padding: 10px;
+    }
 }

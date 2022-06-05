@@ -83,7 +83,7 @@ const CrudApp = () => {
       <main>
         {/* Nav section */}
         <nav>
-          <div className="left-nav">
+          {/* <div className="left-nav">
             <h1>Crud Operation App</h1>
           </div>
           <div className="right-nav">
@@ -101,7 +101,33 @@ const CrudApp = () => {
                 <p onClick={() => setShowForm(false)}>Cancel</p>
               </div>
             </div>
-          </div>
+          </div> */}
+             
+          <ul>
+          <li className="nav_items">
+              <div className="nav_links"><img src="https://mohsinportfolio1.netlify.app/images/mohsin.png" alt="" /></div>
+            </li>
+          </ul>
+
+          <ul className="right-nav">
+            <li className="nav_items">
+           <div  className="input-field">
+           <input
+                  type="text"
+                  placeholder="...Search"
+                  value={searchValue}
+                  onChange={handleSearch}
+                />
+           </div>
+            </li>
+            <li className="nav_items">
+              <div className="nav_links" id="add-field"><button onClick={() => setShowForm(true)}>Add</button></div>
+            </li>
+            <li className="nav_items">
+              <div className="nav_links" ><button onClick={() => setShowForm(false)}>Cancel</button></div>
+            </li>
+          </ul>
+
         </nav>
 
         {/* Form Section */}
@@ -149,10 +175,9 @@ const CrudApp = () => {
         <div className="grid-box">
           {filterData.map((e) => (
             <div className="grid-card" key={e.id}>
-              <h2>{e.name}</h2>
-              <h6>{e.email}</h6>
+              <h3>{e.name}</h3>
+              <p>{e.email}</p>
               <h4>{e.role}</h4>
-              <h4>{e.id}</h4>
               <div className="operation-icons">
                 <RiEdit2Fill id="edit-icon" onClick={() => editCard(e.id)} />
                 <AiFillDelete
