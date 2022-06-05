@@ -28,34 +28,4 @@
     "email": "bjohnsson4@cbc.ca",
     "role": "Engineer",
     "available": true
-  }, {
-    "id": 6,
-    "name": "Jennine",
-    "email": "jsambidge5@telegraph.co.uk",
-    "role": "Architect",
-    "available": true
-  }, {
-    "id": 7,
-    "name": "Hetti",
-    "email": "husmar6@zimbio.com",
-    "role": "Estimator",
-    "available": true
-  }, {
-    "id": 8,
-    "name": "Farlee",
-    "email": "fstratton7@csmonitor.com",
-    "role": "Construction Expeditor",
-    "available": true
-  }, {
-    "id": 9,
-    "name": "Antons",
-    "email": "arudderham8@youtu.be",
-    "role": "Construction Worker",
-    "available": true
-  }, {
-    "id": 10,
-    "name": "Angie",
-    "email": "atrinke9@sakura.ne.jp",
-    "role": "Construction Manager",
-    "available": false
   }]

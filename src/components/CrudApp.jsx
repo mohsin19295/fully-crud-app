@@ -21,7 +21,7 @@ const CrudApp = () => {
       setQuery(e.target.value);
     });
   };
-  
+
   const { name, email, role } = postInput;
 
   const formInputChange = (e) => {
@@ -30,28 +30,32 @@ const CrudApp = () => {
 
   const updateInput = (name, email, role, id) => {
     const newInput = state.map((input) =>
-      input.id === id ? {name, email, role, id} : input
+      input.id === id ? { name, email, role, id } : input
     );
     setState(newInput);
-    setPostInput({ name: "", email: "", role: "" })
+    setPostInput({ name: "", email: "", role: "" });
   };
 
   const formSubmit = (e) => {
     e.preventDefault();
-    if (!editMode) {
-      const payload = {
-        name: postInput.name,
-        email: postInput.email,
-        role: postInput.role,
-        id: uuid(),
-      };
-      setPostInput({ name: "", email: "", role: ""})
-      setState([...state, payload]);
-      setShowForm(false);
+    if (name.length == 0 || email.length == 0 || role.length == 0) {
+      alert("All fields are required");
     } else {
-      updateInput(name, email, role, postInput.id);
-      setEditMode(false);
-      setShowForm(false)
+      if (!editMode) {
+        const payload = {
+          name: postInput.name,
+          email: postInput.email,
+          role: postInput.role,
+          id: uuid(),
+        };
+        setPostInput({ name: "", email: "", role: "" });
+        setState([...state, payload]);
+        setShowForm(false);
+      } else {
+        updateInput(name, email, role, postInput.id);
+        setEditMode(false);
+        setShowForm(false);
+      }
     }
   };
 
@@ -86,19 +90,22 @@ const CrudApp = () => {
         {/* Nav section */}
         <nav>
           <ul className="left-nav">
-          <li className="nav_items">
-              <img src="https://mohsinportfolio1.netlify.app/images/mohsin.png" alt="" />
+            <li className="nav_items">
+              <img
+                src="https://mohsinportfolio1.netlify.app/images/mohsin.png"
+                alt=""
+              />
             </li>
           </ul>
 
           <ul className="right-nav">
             <li className="nav_items input-field">
-           <input
-                  type="text"
-                  placeholder="...Search"
-                  value={searchValue}
-                  onChange={handleSearch}
-                />
+              <input
+                type="text"
+                placeholder="...Search"
+                value={searchValue}
+                onChange={handleSearch}
+              />
             </li>
             <li className="nav_items" id="add-field">
               <button onClick={() => setShowForm(true)}>Add</button>
@@ -107,7 +114,6 @@ const CrudApp = () => {
               <button onClick={() => setShowForm(false)}>Cancel</button>
             </li>
           </ul>
-
         </nav>
 
         {/* Form Section */}
